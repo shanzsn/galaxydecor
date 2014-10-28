@@ -1,0 +1,65 @@
+﻿@model IEnumerable<GalaxyDecor.BusinessLibrary.BusinessObjects.Categories>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ALL Categories</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="categoryTable" class="table-width-100per">
+    @if (Model != null && Model.Count() > 0)
+    {
+    <thead class="TableHeader">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateModified)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr data-configurationvalue="@item.CategoryID">
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateModified)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { CategoryID=item.CategoryID.ToString() }) |            
+                @Html.ActionLink("Delete", "Delete", new { CategoryID=item.CategoryID })
+            </td>
+        </tr>
+        }
+    </tbody>
+    }
+    else
+    {
+        <thead>
+            <tr>
+                <th>Result not found.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Result not found.
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>

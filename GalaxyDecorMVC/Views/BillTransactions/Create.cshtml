@@ -1,0 +1,251 @@
+﻿@using GalaxyDecor.BusinessLibrary.BusinessObjects
+@model GalaxyDecorMVC.Models.BillingModels
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<style type="text/css">
+    .tdStyling
+    {
+        border-bottom: thin solid;
+        border-right: thin solid;
+        margin:0px;
+    }
+    .tdCenter
+    {
+        text-align:center;
+    }
+    .txt85Pcnt
+    {
+        width:85%;
+    }
+    .txt98Pcnt
+    {
+        width:98%;
+    }
+    .txtProperties
+    {
+        margin:0px;
+        font-size:1em;
+        padding:2px;
+    }
+</style>
+
+<h2>Galaxy Decor</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BillingModels</legend>
+
+        <div>
+            <table border="1" style="border:thin solid">
+                <tr>
+                    <td style="width:50%; text-align:left;">
+                        <b>Bill No:&nbsp;</b>To be generated
+                    </td>
+                    <td style="text-align:right;">
+                        <b>Date:&nbsp;</b>@Model.BillIssueDate.ToString("dd/MMM/yyyy")
+                        <input type="hidden" value="@Model.BillIssueDate" id="BillIssueDate" name="BillIssueDate" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:50%; text-align:left;">
+                        <b>Name:&nbsp;</b>
+                        @if (Model.prpMembersInformation != null && Model.prpMembersInformation.MembershipNo != -1) 
+                        { 
+                            @Model.prpMembersInformation.PersonName; 
+                        } 
+                        else 
+                        { 
+                            <text>Select Name</text>
+                        }
+                        <input type="hidden" value="@Model.prpMembersInformation.MembershipNo" id="MembershipNo" name="prpMembersInformation.MembershipNo" />
+                    </td>
+                    <td style="text-align:right;">
+                        @*<b>Sponsor:&nbsp;</b>@Model.MembersInformation.SponsorshipNo*@
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table border="1" style="border:thin solid currentColor;">
+                <thead style="border-bottom:solid currentColor;">
+                    <tr>
+                        <td style="width:30px;" class="tdCenter"><b>No</b></td>
+                        <td style="width:400px;"><b>Item</b></td>
+                        <td style="width:60px;"><b>Price</b></td>
+                        <td style="width:60px;"><b>Qty</b></td>
+                        <td style="width:60px;"><b>Total</b></td>
+                    </tr>
+                </thead>
+                <tbody id="tbItems">
+                    @for (int i = 0; i < 8; i++)
+                    {
+                        int Numbering = i + 1;
+                        string trItems = "trItems" + i;
+                        string ItemID = "Items_" + i + "_ItemID|transactions[" + i + "].ItemID";
+                        string ItemName = "Items_" + i + "_ItemName|transactions[" + i + "].ItemName";
+                        string Price = "Items_" + i + "_Price|transactions[" + i + "].Price";
+                        string Quantity = "Items_" + i + "_Quantity|transactions[" + i + "].Quantity";
+                        string Total = "Items_" + i + "_Total|transactions[" + i + "].Total";
+                        
+                        <tr id="@trItems">
+                            <td class="tdStyling tdCenter">@Numbering<input type="hidden" name="transactions.Index" value="@i" /></td>
+                            <td class="tdStyling">
+                                <input id="@ItemID.Split('|')[0]" name="@ItemID.Split('|')[1]" type="hidden" />
+                                <input id="@ItemName.Split('|')[0]" name="@ItemName.Split('|')[1]" type="text" class="autCompletework txt98Pcnt txtProperties" /></td>
+                            <td class="tdStyling"><input id="@Price.Split('|')[0]" name="@Price.Split('|')[1]" type="text" class="calculateTotal txt85Pcnt txtProperties" /></td>
+                            <td class="tdStyling"><input id="@Quantity.Split('|')[0]" name="@Quantity.Split('|')[1]" type="text" class="calculateTotal txt85Pcnt txtProperties" /></td>
+                            <td class="tdStyling"><input id="@Total.Split('|')[0]" name="@Total.Split('|')[1]" type="text" class="txt85Pcnt txtProperties" readonly="true" /></td>
+                        </tr>
+                    }
+                    @*<tr>
+                        <td colspan="5">
+                            @Html.HiddenFor(m => m.itemInformation.ItemID)
+                            <input type="text" id="search" placeholder="Search for a product" required />
+                        </td>
+                    </tr>*@
+                </tbody>
+            </table>
+        </div>
+
+        <table border="1" style="border:thin solid; margin:0px;">
+            <tr>
+                <td style="width:30px;">&nbsp;</td>
+                <td colspan="4">
+                    <a onclick="InsertItem()">Insert Item</a>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:30px;">&nbsp;</td>
+                <td style="width:400px;"><b>Total</b></td>
+                <td style="width:60px;">&nbsp;</td>
+                <td style="width:60px;">&nbsp;</td>
+                <td style="width:60px; border-left:thin solid;" id ="tdtotal"><input type="hidden" value="" /></td>
+            </tr>
+        </table>
+                
+        <input type="submit" value="Create" />
+    </fieldset>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script type="text/javascript">
+
+    var url = '@Url.RouteUrl("DefaultApi", new { httproute = "GetItems", controller = "ItemsApi" })';
+    
+    $('#tbItems tr .autCompletework').autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: url,
+                data: { query: request.term },
+                dataType: 'json',
+                type: 'GET',
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return {
+                            label: item.ItemName,
+                            itemid: item.ItemID,
+                            extravalue: item.Price
+                        }
+                    }));
+                },
+                error: function (xhr, status, message) {
+                    alert(xhr.responseText);
+                }
+            })
+        },
+        select: function (event, ui) {
+            event.preventDefault();
+            var val = $(this).attr('id');
+            $(this).val(ui.item.label);
+            $('#' + val.replace('_ItemName', '_ItemID')).val(ui.item.itemid);
+            $('#' + val.replace('_ItemName', '_Price')).val(ui.item.extravalue);
+            return false;
+        },
+        minLength: 1
+    });
+
+    $('.calculateTotal').focusout(function (e)
+    {
+        var val = $(this).attr('id');
+        
+        var splitvalues = val.split('_');
+        val = splitvalues[2];
+        index = splitvalues[1];
+        
+        var price = '', quantity = '';
+
+        switch (val)
+        {
+            case 'Price':
+                price = $(this).val();
+                quantity = $('#Items_' + index + '_Quantity').val();
+                break;
+            case 'Quantity':
+                quantity = $(this).val();
+                price = $('#Items_' + index + '_Price').val();
+                break;
+        }
+        
+        if (price != '' && quantity != '') {
+
+            var total = price * quantity;
+
+            $('#Items_' + index + '_Total').val(total);
+
+            var SumOfTotal = 0;
+            for (var i=0; i<10; i++)
+            {
+                var val = $('#Items_' + i + '_Total').val();
+
+                if (val != null)
+                    SumOfTotal += Number(val);
+            }
+            
+            $('#tdtotal').html(SumOfTotal);
+        }
+    });
+
+    function InsertItem() {
+        @{
+            Model.transactions.Add(new BillTransactions());
+        }
+
+        var index = $("#tbItems").children("tr").length;
+
+        var indexCell = "<td class='tdStyling tdCenter'>" + (index + 1)+ "<input name='transactions.Index' type='hidden' value='" + index + "' /></td>";
+        var itemNameCell = "<td class='tdStyling'><input id='Items_" + index + "_ItemName' name='transactions[" + index + "].ItemName' class='autCompletework txt98Pcnt txtProperties' type='text' value='' /></td>";
+        var priceCell = "<td class='tdStyling'><input id='Items_" + index + "_Price' name='transactions[" + index + "].Price' class='calculateTotal txt85Pcnt txtProperties' type='text' value='' /></td>";
+        var quantityCell = "<td class='tdStyling'><input id='Items_" + index + "_Quantity' name='transactions[" + index + "].Quantity' class='calculateTotal txt85Pcnt txtProperties' type='text' value='' /></td>";
+        var totalCell = "<td class='tdStyling'><input id='Items_" + index + "_Total' name='transactions[" + index + "].Total' class='txt85Pcnt txtProperties' type='text' value='' /></td>";
+        //var publishedCell = "<td><input id='Books_" + index + "__Title' name='Books[" + index + "].PublishedDate' type='text' value='' /></td>";
+        //var removeCell = "<td><input id='btnAddBook' type='button' value='Remove' onclick='removeRow(" + index + ");' /></td>";
+
+        var newRow = "<tr id='trItems" + index + "'>" + indexCell + itemNameCell + priceCell + quantityCell + totalCell + "</tr>";
+
+        $("#tbItems").append(newRow);
+    }
+
+    function removeRow(id) {
+        var controlToBeRemoved = "#trBook" + id;
+        $(controlToBeRemoved).remove();
+    }
+</script>

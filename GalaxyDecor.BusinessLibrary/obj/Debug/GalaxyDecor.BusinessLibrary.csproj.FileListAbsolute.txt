@@ -1,0 +1,18 @@
+C:\Users\v-zeesh\Documents\Visual Studio 2012\Projects\GalaxyDecor\GalaxyDecor.BusinessLibrary\obj\Debug\GalaxyDecor.BusinessLibrary.csprojResolveAssemblyReference.cache
+C:\Users\v-zeesh\Documents\Visual Studio 2012\Projects\GalaxyDecor\GalaxyDecor.BusinessLibrary\bin\Debug\GalaxyDecor.BusinessLibrary.dll
+C:\Users\v-zeesh\Documents\Visual Studio 2012\Projects\GalaxyDecor\GalaxyDecor.BusinessLibrary\bin\Debug\GalaxyDecor.BusinessLibrary.pdb
+C:\Users\v-zeesh\Documents\Visual Studio 2012\Projects\GalaxyDecor\GalaxyDecor.BusinessLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\v-zeesh\Documents\Visual Studio 2012\Projects\GalaxyDecor\GalaxyDecor.BusinessLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\v-zeesh\Documents\Visual Studio 2012\Projects\GalaxyDecor\GalaxyDecor.BusinessLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\v-zeesh\Documents\Visual Studio 2012\Projects\GalaxyDecor\GalaxyDecor.BusinessLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\v-zeesh\Documents\Visual Studio 2012\Projects\GalaxyDecor\GalaxyDecor.BusinessLibrary\obj\Debug\GalaxyDecor.BusinessLibrary.dll
+C:\Users\v-zeesh\Documents\Visual Studio 2012\Projects\GalaxyDecor\GalaxyDecor.BusinessLibrary\obj\Debug\GalaxyDecor.BusinessLibrary.pdb
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Debug\GalaxyDecor.BusinessLibrary.dll
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Debug\GalaxyDecor.BusinessLibrary.pdb
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\obj\Debug\GalaxyDecor.BusinessLibrary.csprojResolveAssemblyReference.cache
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\obj\Debug\GalaxyDecor.BusinessLibrary.dll
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\obj\Debug\GalaxyDecor.BusinessLibrary.pdb

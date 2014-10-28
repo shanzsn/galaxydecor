@@ -1,0 +1,62 @@
+﻿@model IEnumerable<GalaxyDecor.BusinessLibrary.BusinessObjects.Items>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Items</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table id="itemsTable" class="table-width-100per">
+    @if (Model != null && Model.Count() > 0)
+    {
+    <thead class="TableHeader">
+      <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalculatePVPoints)
+        </th>
+        <th></th>
+       </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalculatePVPoints)
+            </td>
+            <td>    
+                @Html.ActionLink("Edit", "Edit", new { ItemID=item.ItemID }) |
+                @Html.ActionLink("Delete", "Delete", new { ItemID=item.ItemID })
+            </td>
+        </tr>
+        }
+    </tbody>
+    }
+</table>

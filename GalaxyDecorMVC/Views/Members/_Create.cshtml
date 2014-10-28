@@ -1,0 +1,220 @@
+﻿@model GalaxyDecor.BusinessLibrary.BusinessObjects.MembersInformation
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>MembersInformation</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SponsorshipNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SponsorshipNo)
+            @Html.ValidationMessageFor(model => model.SponsorshipNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PersonName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PersonName)
+            @Html.ValidationMessageFor(model => model.PersonName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JoiningDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.JoiningDate)
+            @Html.ValidationMessageFor(model => model.JoiningDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DOB)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DOB)
+            @Html.ValidationMessageFor(model => model.DOB)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PersonalPhone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PersonalPhone)
+            @Html.ValidationMessageFor(model => model.PersonalPhone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PersonalMobile)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PersonalMobile)
+            @Html.ValidationMessageFor(model => model.PersonalMobile)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MotherTounge)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MotherTounge)
+            @Html.ValidationMessageFor(model => model.MotherTounge)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PersonalHobby)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PersonalHobby)
+            @Html.ValidationMessageFor(model => model.PersonalHobby)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PermenantDistrict)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PermenantDistrict)
+            @Html.ValidationMessageFor(model => model.PermenantDistrict)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PermenantPinCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PermenantPinCode)
+            @Html.ValidationMessageFor(model => model.PermenantPinCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PermenantState)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PermenantState)
+            @Html.ValidationMessageFor(model => model.PermenantState)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResidentialAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ResidentialAddress)
+            @Html.ValidationMessageFor(model => model.ResidentialAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResidentialTaluka)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ResidentialTaluka)
+            @Html.ValidationMessageFor(model => model.ResidentialTaluka)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResidentialCity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ResidentialCity)
+            @Html.ValidationMessageFor(model => model.ResidentialCity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResidentialState)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ResidentialState)
+            @Html.ValidationMessageFor(model => model.ResidentialState)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResidentialPinCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ResidentialPinCode)
+            @Html.ValidationMessageFor(model => model.ResidentialPinCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PassportSizePhoto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PassportSizePhoto)
+            @Html.ValidationMessageFor(model => model.PassportSizePhoto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhotoIDProof)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PhotoIDProof)
+            @Html.ValidationMessageFor(model => model.PhotoIDProof)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResidentialProof)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ResidentialProof)
+            @Html.ValidationMessageFor(model => model.ResidentialProof)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MembershipFee)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MembershipFee)
+            @Html.ValidationMessageFor(model => model.MembershipFee)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplicantSigned)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplicantSigned)
+            @Html.ValidationMessageFor(model => model.ApplicantSigned)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DocumentCheckedBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DocumentCheckedBy)
+            @Html.ValidationMessageFor(model => model.DocumentCheckedBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsAuthorisedSignatoryComplete)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsAuthorisedSignatoryComplete)
+            @Html.ValidationMessageFor(model => model.IsAuthorisedSignatoryComplete)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorisedSignatoryCompletionDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AuthorisedSignatoryCompletionDate)
+            @Html.ValidationMessageFor(model => model.AuthorisedSignatoryCompletionDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

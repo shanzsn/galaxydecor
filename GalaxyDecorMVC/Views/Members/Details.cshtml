@@ -1,0 +1,312 @@
+﻿@model GalaxyDecor.BusinessLibrary.BusinessObjects.MembersInformation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/css/members.css" />
+
+@using (Html.BeginForm("Edit", "Members", new {Id = @Model.MembershipNo}, FormMethod.Post, new { @class = "register" }))
+{
+    <div class="header_block">
+        <div class="logo_block">
+            <img src="/content/img/gm_club_logo.png" width="282px" height="126px" alt="" />
+        </div>
+        <div class="member_avtar_block">
+            <div class="member_avtar"></div>
+        </div>
+    </div>
+    <div class="header_info">
+        <div class="float_left">
+            <div class="joining_date">Joining Date</div>
+            <div class="float_left">
+                <input type="text" readonly="true" value="@Model.JoiningDate.ToShortDateString()" style="text-align:center;" />
+            </div>
+        </div>
+        <div class="form_title">Application Form</div>
+        <div class="float_left">
+            <div class="membership">Membership Number</div>
+            <div class="float_left">
+                <input type="text" readonly="true" value="@Model.MembershipNo" style="text-align:center;" />
+            </div>
+        </div>
+    </div>
+    <fieldset class="row1" style="border-top: none; padding-top: 20px;">
+        <p>
+            <label>
+                Name :
+            </label>
+            <label style="text-align:left; width:200px;">@Model.PersonName</label>
+            <label>
+                Date of Birth :
+            </label>
+            <label style="text-align:left; width:200px;">@Model.DOB.ToShortDateString()</label>
+        </p>
+        <p>
+            <label>
+                Residencial Address :
+            </label>
+            <label style="text-align:left; width:200px;">@Model.ResidentialAddress</label>
+            <label>
+                @*Repeat Password**@
+            </label>
+            @*<input type="text" />*@
+        </p>
+        <p>
+            <label>
+                Tal :
+            </label>
+            <label style="text-align:left; width:200px;">@Model.ResidentialTaluka</label>
+            <label>
+                Dist :
+            </label>
+            <label style="text-align:left; width:200px;">@Model.PermenantDistrict</label>
+        </p>
+        <p>
+            <label>
+                Phone :
+            </label>
+            <label style="text-align:left; width:200px;">@Model.PersonalPhone</label>
+            <label>
+                Mobile :
+            </label>
+            <label style="text-align:left; width:200px;">@Model.PersonalMobile</label>
+        </p>
+        <p>
+            <label>
+                Mother Tongue :
+            </label>
+            <label style="text-align:left; width:200px;">@Model.MotherTounge</label>
+            <label>
+                Habits/Hobby :
+            </label>
+            <label style="text-align:left; width:200px;">@Model.PersonalHobby</label>
+        </p>
+    </fieldset>
+    <fieldset class="row1">
+        <h4>Firm Details
+        </h4>
+        <p>
+            <label>
+                Firm Name :
+            </label>
+            <input type="text" />
+            <label>
+                Staff :
+            </label>
+            <input type="text" />
+        </p>
+        <p>
+            <label>
+                Address :
+            </label>
+            <textarea cols="" rows=""></textarea>
+            <label>
+                Ph :
+            </label>
+            <input type="text" />
+        </p>
+    </fieldset>
+    <fieldset class="row1">
+        <h4>Other Details
+        </h4>
+        <p>
+            <label>
+                Native Name :
+            </label>
+            <input type="text" />
+            <label>
+                Address :
+            </label>
+            <input type="text" />
+        </p>
+        <p>
+            <label>
+                Tal :
+            </label>
+            <input type="text" />
+            <label>
+                Dist :
+            </label>
+            <input type="text" />
+        </p>
+        <p>
+            <label>
+                Pincode :
+            </label>
+            <input type="text" />
+            <label>
+                state :
+            </label>
+            <input type="text" />
+        </p>
+    </fieldset>
+    <fieldset class="row1">
+        <h4>Family Details
+        </h4>
+        <table cellpadding="0" cellspacing="0" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th style="text-align:center;">No.</th>
+                    <th>Name</th>
+                    <th>Relationship</th>
+                    <th>Age</th>
+                    <th>Qualification</th>
+                </tr>
+            </thead>
+            <tr>
+                <td style="text-align:center;">1</td>
+                <td>
+                    <input type="text" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 120px;" readonly="true" /></td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">2</td>
+                <td>
+                    <input type="text" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 120px;" readonly="true" /></td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">3</td>
+                <td>
+                    <input type="text" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 120px;" readonly="true" /></td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">4</td>
+                <td>
+                    <input type="text" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 120px;" readonly="true" /></td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">5</td>
+                <td>
+                    <input type="text" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 120px;" readonly="true" /></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset class="row1">
+        <h4>Sponsor Details
+        </h4>
+        <p>
+            <label>
+                Sponsor Name :
+            </label>
+            <input type="text" />
+            <label>
+                Membership No :
+            </label>
+            <input type="text" />
+        </p>
+        <p>
+            <label>
+                Address :
+            </label>
+            <textarea cols="" rows=""></textarea>
+            <label>
+                Dist :
+            </label>
+            <input type="text" />
+        </p>
+        <p>
+            <label>
+                Mobile :
+            </label>
+            <input type="text" />
+            <label>
+                Sponsore Sign :
+            </label>
+            <input type="text" />
+        </p>
+    </fieldset>
+    <fieldset class="row2">
+        <h4>Documents Details
+        </h4>
+        <p>
+            <label class="left_label">
+                (1) 2 Passport Size Photo
+            </label>
+            @Html.CheckBoxFor(model => model.PassportSizePhoto)
+        </p>
+        <p>
+            <label class="left_label">
+                (2) Photo ID Proof
+            </label>
+            @Html.CheckBoxFor(model => model.PhotoIDProof)
+        </p>
+        <p>
+            <label class="left_label">
+                (3) Residencial Proof
+            </label>
+            @Html.CheckBoxFor(model => model.ResidentialProof)
+        </p>
+        <p>
+            <label class="left_label">
+                (4) Membership Fees Re. 100/-
+            </label>
+            @Html.CheckBoxFor(model => model.MembershipFee)
+        </p>
+    </fieldset>
+    <fieldset class="row3" style="padding-top: 0px;">
+        <p>
+            <label class="left_label" style="margin-top: 95px;">
+                <strong>Applicant Signed</strong>@Html.CheckBoxFor(model => model.ApplicantSigned)
+            </label>
+        </p>
+    </fieldset>
+    <fieldset class="row2">
+        <h4>Office Use Only
+        </h4>
+        <p style="margin-top: 35px;">
+            <label>
+                Document Checked by
+            </label>
+            <label style="text-align:left; width:200px;">@Model.DocumentCheckedBy</label>
+        </p>
+    </fieldset>
+    <fieldset class="row3">
+        <p>
+            <label class="left_label">
+                For, <strong>Galaxy Mistry Club</strong>
+            </label>
+        </p>
+        <p>
+            <label class="left_label" style="margin-top: 35px;">
+                Authorised Signatory On : @if (Model.AuthorisedSignatoryCompletionDate.HasValue) { @Model.AuthorisedSignatoryCompletionDate.Value.ToShortDateString(); }
+            </label>
+        </p>
+    </fieldset>
+    <fieldset style="float: right;" class="row3">
+        <div>
+            @Html.ActionLink("Edit Form", "Edit", new { memberID = Model.MembershipNo }, new { @Style="font-size:2em;" }) |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </fieldset>
+}

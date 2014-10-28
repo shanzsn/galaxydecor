@@ -1,0 +1,9 @@
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Release\GalaxyDecor.BusinessLibrary.dll
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Release\GalaxyDecor.BusinessLibrary.pdb
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\obj\Release\GalaxyDecor.BusinessLibrary.csprojResolveAssemblyReference.cache
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\obj\Release\GalaxyDecor.BusinessLibrary.dll
+D:\Zeeshan\Projects\GalaxyDecorMVC\GalaxyDecor.BusinessLibrary\obj\Release\GalaxyDecor.BusinessLibrary.pdb

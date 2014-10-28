@@ -1,0 +1,365 @@
+﻿@model GalaxyDecor.BusinessLibrary.BusinessObjects.MembersInformation
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/css/members.css" />
+
+@using (Html.BeginForm("Create", "Members", FormMethod.Post, new { @class = "register" }))
+{
+    @Html.ValidationSummary(true)
+    
+    <div class="header_block">
+        <div class="logo_block">
+            <img src="/content/img/gm_club_logo.png" width="282px" height="126px" alt="" />
+        </div>
+        <div class="member_avtar_block">
+            <div class="member_avtar"></div>
+        </div>
+    </div>
+    <div class="header_info">
+        <div class="float_left">
+            <div class="joining_date">Joining Date</div>
+            <div class="float_left">
+                <input type="text" name="JoiningDate" id="JoiningDate" required style="text-align:center;" />
+            </div>
+        </div>
+        <div class="form_title">Application Form</div>
+        <div class="float_left">
+            <div class="membership">Membership Number</div>
+            <div class="float_left">
+                <input type="text" readonly="true" style="text-align:center;" />
+            </div>
+        </div>
+    </div>
+    <fieldset class="row1" style="border-top: none; padding-top: 20px;">
+        <p>
+            <label>
+                Name *
+            </label>
+            @Html.EditorFor(model => model.PersonName)
+            <label>
+                Date of Birth *
+            </label>
+            @Html.EditorFor(model => model.DOB)
+        </p>
+        <p>
+            <label>
+                Tal
+            </label>
+            @Html.EditorFor(model => model.ResidentialTaluka)
+            <label>
+                Dist
+            </label>
+            @Html.EditorFor(model => model.PermenantDistrict)
+        </p>
+        <p>
+            <label>
+                Phone
+            </label>
+            @Html.EditorFor(model => model.PersonalPhone)
+            <label>
+                Mobile*
+            </label>
+            @Html.EditorFor(model => model.PersonalMobile)
+        </p>
+        <p>
+            <label>
+                Mother Tongue
+            </label>
+            @Html.EditorFor(model => model.MotherTounge)
+            <label>
+                Habits/Hobby
+            </label>
+            @Html.EditorFor(model => model.PersonalHobby)
+        </p>
+        <p>
+            <label>
+                Residencial Address
+            </label>
+            <textarea cols="" rows="" id="ResidentialAddress" name="ResidentialAddress"></textarea>
+            <label>
+                @*Repeat Password**@
+            </label>
+            @*<input type="text" />*@
+        </p>
+    </fieldset>
+    <fieldset class="row1">
+        <h4>Firm Details
+        </h4>
+        <p>
+            <label>
+                Firm Name 
+            </label>
+            <input type="text" readonly="true" />
+            <label>
+                Staff 
+            </label>
+            <input type="text" readonly="true" />
+        </p>
+        <p>
+            <label>
+                Address
+            </label>
+            <textarea cols="" rows="" readonly="true"></textarea>
+            <label>
+                Ph
+            </label>
+            <input type="text" readonly="true" />
+        </p>
+    </fieldset>
+    <fieldset class="row1">
+        <h4>Other Details
+        </h4>
+        <p>
+            <label>
+                Native Name 
+            </label>
+            <input type="text" readonly="true" />
+            <label>
+                Address 
+            </label>
+            <input type="text" readonly="true" />
+        </p>
+        <p>
+            <label>
+                Tal
+            </label>
+            <input type="text" readonly="true" />
+            <label>
+                Dist
+            </label>
+            <input type="text" readonly="true" />
+        </p>
+        <p>
+            <label>
+                Pincode
+            </label>
+            <input type="text" readonly="true" />
+            <label>
+                state
+            </label>
+            <input type="text" readonly="true" />
+        </p>
+    </fieldset>
+    <fieldset class="row1">
+        <h4>Family Details
+        </h4>
+        <table cellpadding="0" cellspacing="0" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th style="text-align:center;">No.</th>
+                    <th>Name</th>
+                    <th>Relationship</th>
+                    <th>Age</th>
+                    <th>Qualification</th>
+                </tr>
+            </thead>
+            <tr>
+                <td style="text-align:center;">1</td>
+                <td>
+                    <input type="text" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 120px;" readonly="true" /></td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">2</td>
+                <td>
+                    <input type="text" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 120px;" readonly="true" /></td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">3</td>
+                <td>
+                    <input type="text" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 120px;" readonly="true" /></td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">4</td>
+                <td>
+                    <input type="text" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 120px;" readonly="true" /></td>
+            </tr>
+            <tr>
+                <td style="text-align:center;">5</td>
+                <td>
+                    <input type="text" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 80px;" readonly="true" /></td>
+                <td>
+                    <input type="text" style="width: 120px;" readonly="true" /></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset class="row1">
+        <h4>Sponsor Details
+        </h4>
+        <p>
+            <label>
+                Sponsor Name *
+            </label>
+            @Html.DropDownListFor(model => model.SponsorshipNo, new SelectList(ViewBag.membersGroup, "MemberShipNo", "PersonName"), "(No Sponsor)", new {style = "width: 202px; height: 20px;"})
+            <label>
+                Membership No *
+            </label>
+            <input type="text" />
+        </p>
+        <p>
+            <label>
+                Address*
+            </label>
+            <textarea cols="" rows=""></textarea>
+            <label>
+                Dist*
+            </label>
+            <input type="text" />
+        </p>
+        <p>
+            <label>
+                Mobile*
+            </label>
+            <input type="text" />
+            <label>
+                Sponsore Sign*
+            </label>
+            <input type="text" />
+        </p>
+    </fieldset>
+    <fieldset class="row2">
+        <h4>Documents Details
+        </h4>
+        <p>
+            <label class="left_label">
+                (1) 2 Passport Size Photo
+            </label>
+            @Html.CheckBoxFor(model => model.PassportSizePhoto)
+        </p>
+        <p>
+            <label class="left_label">
+                (2) Photo ID Proof
+            </label>
+            @Html.CheckBoxFor(model => model.PhotoIDProof)
+        </p>
+        <p>
+            <label class="left_label">
+                (3) Residencial Proof
+            </label>
+            @Html.CheckBoxFor(model => model.ResidentialProof)
+        </p>
+        <p>
+            <label class="left_label">
+                (4) Membership Fees Re. 100/-
+            </label>
+            @Html.CheckBoxFor(model => model.MembershipFee)
+        </p>
+    </fieldset>
+    <fieldset class="row3" style="padding-top: 0px;">
+        <p>
+            <label class="left_label" style="margin-top: 95px;">
+                <strong>Applicant Signed</strong>@Html.CheckBoxFor(model => model.ApplicantSigned)
+            </label>
+        </p>
+    </fieldset>
+    <fieldset class="row2">
+        <h4>Office Use Only
+        </h4>
+        <p style="margin-top: 35px;">
+            <label>
+                Document Checked by
+            </label>
+            @Html.TextBoxFor(model => model.DocumentCheckedBy)
+        </p>
+    </fieldset>
+    <fieldset class="row3">
+        <p>
+            <label class="left_label">
+                For, <strong>Galaxy Mistry Club</strong>
+            </label>
+        </p>
+        <p>
+            <label style="width:150px;margin-top: 35px;">
+                Authorised Signatory On
+            </label>
+            <label style="margin-top:35px;width:200px;">
+                @Html.TextBoxFor(model => model.AuthorisedSignatoryCompletionDate, new { @Style="width:170px;" })
+            </label>
+        </p>
+    </fieldset>
+    <fieldset style="float: left;" class="row3">
+        <div>
+            <button class="button">Submit &raquo;</button>
+            <button class="button" onclick="document.location.href = $('#cancelUrl').attr('href');">Cancel &raquo;</button>
+            <a id="cancelUrl" href="@Html.AttributeEncode(Url.Action("Index", "Members"))" style="display:none;"></a>
+        </div>
+    </fieldset>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui") 
+    @Styles.Render("~/Content/themes/base/css", "~/Content/css") 
+}
+
+<script type="text/ecmascript">
+    $(document).ready(function () {
+        //$('#JoiningDate').datepicker();
+        //$('#DOB').datepicker();
+        //$('#AuthorisedSignatoryCompletionDate').datepicker();
+
+        $("#JoiningDate").datepicker({
+            showOn: 'both',
+            dateFormat: 'dd/mm/yy',
+            buttonImage: "/content/img/calendar_icon.png",
+            buttonImageOnly: true
+        });
+
+        $("#DOB").datepicker({
+            showOn: 'both',
+            dateFormat: 'dd/mm/yy',
+            buttonImage: "/content/img/calendar_icon.png",
+            buttonImageOnly: true
+        });
+
+        $("#AuthorisedSignatoryCompletionDate").datepicker({
+            showOn: 'both',
+            dateFormat: 'dd/mm/yy',
+            buttonImage: "/content/img/calendar_icon.png",
+            buttonImageOnly: true
+        });
+    });
+    
+    $('#SponsorshipNo').on('change', function () {
+        alert(this.value); // or $(this).val()
+        var vl = $(this).val();
+        @{string ID = vl;}
+        @((ViewBag.membersGroup as ICollection<GalaxyDecor.BusinessLibrary.BusinessObjects.MembersInformation>).Where(o=>o.MembershipNo==ID).PersonName);
+    });
+
+    //((ViewBag.data as ICollection<Person>).First().FirstName)
+</script>

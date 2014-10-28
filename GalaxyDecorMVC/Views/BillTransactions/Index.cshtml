@@ -1,0 +1,237 @@
+﻿@model GalaxyDecorMVC.Models.BillingModels
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Galaxy Decor</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BillingModels</legend>
+
+        <div>
+            <table border="1" style="border:thin solid">
+                <tr>
+                    <td style="width:50%; text-align:left;">
+                        Bill No:
+                    </td>
+                    <td style="text-align:right;">
+                        Date:
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:50%; text-align:left;">
+                        Name: 
+                    </td>
+                    <td style="text-align:right;">
+                        Sponsor: 
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table border="1" style="border:thin solid currentColor;">
+                <thead style="border-bottom:solid currentColor;">
+                    <tr>
+                        <td style="width:30px;">No</td>
+                        <td style="width:400px;">Item</td>
+                        <td style="width:60px;">Price</td>
+                        <td style="width:60px;">Qty</td>
+                        <td style="width:60px;">Total</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">Item 1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">100</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">5</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">500</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">Item 1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">100</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">5</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">500</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">Item 1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">100</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">5</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">500</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">Item 1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">100</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">5</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">500</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">Item 1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">100</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">5</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">500</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">Item 1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">100</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">5</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">500</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">Item 1</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">100</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">5</td>
+                        <td style="border-bottom:thin solid; border-right:thin solid;">500</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <table border="1" style="border:thin solid; margin:0px;">
+            <tr>
+                <td style="width:30px;">&nbsp;</td>
+                <td style="width:400px;"><b>Total</b></td>
+                <td style="width:60px;">&nbsp;</td>
+                <td style="width:60px;">&nbsp;</td>
+                <td style="width:60px; border-left:thin solid;">10000</td>
+            </tr>
+        </table>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TID)
+            @Html.ValidationMessageFor(model => model.TID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsPurchase)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsPurchase)
+            @Html.ValidationMessageFor(model => model.IsPurchase)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ItemID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ItemID)
+            @Html.ValidationMessageFor(model => model.ItemID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ItemName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ItemName)
+            @Html.ValidationMessageFor(model => model.ItemName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Quantity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Quantity)
+            @Html.ValidationMessageFor(model => model.Quantity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IncludeInPV)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IncludeInPV)
+            @Html.ValidationMessageFor(model => model.IncludeInPV)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BillNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BillNo)
+            @Html.ValidationMessageFor(model => model.BillNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MemberShipNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MemberShipNo)
+            @Html.ValidationMessageFor(model => model.MemberShipNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Total)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Total)
+            @Html.ValidationMessageFor(model => model.Total)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GrandTotal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GrandTotal)
+            @Html.ValidationMessageFor(model => model.GrandTotal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PVPoints)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PVPoints)
+            @Html.ValidationMessageFor(model => model.PVPoints)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BillIssueDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BillIssueDate)
+            @Html.ValidationMessageFor(model => model.BillIssueDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.YearMonth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.YearMonth)
+            @Html.ValidationMessageFor(model => model.YearMonth)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
