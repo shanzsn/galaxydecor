@@ -20,9 +20,17 @@ namespace GalaxyDecorMVC.Controllers
 
         public ActionResult Details(int memberID)
         {
-            MembersInformation membersList = MembersBR.GetSelectedMember(memberID);
+            MembersInformation memberdetail = MembersBR.GetSelectedMember(memberID);
 
-            return this.View(membersList);
+            return this.View(memberdetail);
+        }
+
+        [HttpGet]
+        public JsonResult SponsorDetails(int memberID)
+        {
+            MembersInformation memberdetail = MembersBR.GetSelectedMember(memberID);
+
+            return this.Json(memberdetail, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

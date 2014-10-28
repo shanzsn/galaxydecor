@@ -218,29 +218,29 @@
         </h4>
         <p>
             <label>
-                Sponsor Name *
+                Sponsor Name
             </label>
             @Html.DropDownListFor(model => model.SponsorshipNo, new SelectList(ViewBag.membersGroup, "MemberShipNo", "PersonName"), "(No Sponsor)", new {style = "width: 202px; height: 20px;"})
             <label>
-                Membership No *
+                Membership No
             </label>
-            <input type="text" />
+            <input type="text" name="sponsormembershipno" id="sponsormembershipno" readonly="true" />
         </p>
         <p>
             <label>
-                Address*
+                Address
             </label>
-            <textarea cols="" rows=""></textarea>
+            <textarea cols="" rows="" name="sponsoraddress" id="sponsoraddress" readonly></textarea>
             <label>
-                Dist*
+                Dist
             </label>
-            <input type="text" />
+            <input type="text" name="sponsordist" id="sponsordist" readonly="true" />
         </p>
         <p>
             <label>
-                Mobile*
+                Mobile
             </label>
-            <input type="text" />
+            <input type="text" name="sponsormobile" id="sponsormobile" readonly="true" />
             <label>
                 Sponsore Sign*
             </label>
@@ -355,10 +355,21 @@
     });
     
     $('#SponsorshipNo').on('change', function () {
-        alert(this.value); // or $(this).val()
-        var vl = $(this).val();
-        @{string ID = vl;}
-        @((ViewBag.membersGroup as ICollection<GalaxyDecor.BusinessLibrary.BusinessObjects.MembersInformation>).Where(o=>o.MembershipNo==ID).PersonName);
+        var urlcontroller = "/Members/SponsorDetails?memberID=" + $(this).val();
+
+        $.ajax({
+            type: "GET",
+            url: urlcontroller,
+            success: function (data) {
+                $('#sponsormembershipno').val(data.MembershipNo);
+                $('#sponsoraddress').val(data.ResidentialAddress);
+                $('#sponsordist').val(data.PermenantDistrict);
+                $('#sponsormobile').val(data.PersonalMobile);
+            },
+            error: function (xhr, status, message) {
+                alert(xhr.responseText + "|Member.Create");
+            }
+        });
     });
 
     //((ViewBag.data as ICollection<Person>).First().FirstName)
